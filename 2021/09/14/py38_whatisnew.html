@@ -1,0 +1,289 @@
+<h1 id="new-features-in-python-38">New Features in Python 3.8</h1>
+
+<h2 id="introduction">Introduction</h2>
+
+<p>It may be noted that this document is more of an exemplified excerpt of official Python Documentation: <a href="https://docs.python.org/3/whatsnew/3.8.html">What’s New In Python 3.8</a>.</p>
+
+<p>You are recommended to take a look at the Official Documentation with a view to take full advantage of new features of Python 3.8.</p>
+
+<h2 id="features">Features</h2>
+
+<h3 id="1-assignment-expressions-to-simplify-code-constructs">1. Assignment Expressions (to simplify code constructs)</h3>
+
+<ul>
+  <li><a href="https://blog.teclado.com/python-assignment-expressions/">Assignment Expression and Walrus Operator</a></li>
+  <li>Provide for easier-looking code in certain situation (while loop conditions, efficient list/dictionary/set comprehensions)</li>
+  <li>Please see <a href="https://www.python.org/dev/peps/pep-0572/#examples">Python Standard Library</a> for examples from Python 3.8 standard library</li>
+</ul>
+
+<h3 id="2-positional-only--keyword-only-function-arguments">2. Positional-Only &amp; Keyword-Only Function Arguments</h3>
+
+<ul>
+  <li>
+    <p><strong>Rules</strong></p>
+
+    <ul>
+      <li>Division operator in function signature <code class="language-plaintext highlighter-rouge">/</code> - arguments to the left side of the operator are enforced as <code class="language-plaintext highlighter-rouge">positional-only</code></li>
+      <li>Multiplication operator in function signature <code class="language-plaintext highlighter-rouge">*</code> - arguments to the right side of the operator are enforced as <code class="language-plaintext highlighter-rouge">keyword-only</code></li>
+      <li>You can intersperse positional or keyword arguments between <code class="language-plaintext highlighter-rouge">/</code> and <code class="language-plaintext highlighter-rouge">*</code> in the function signature.</li>
+    </ul>
+  </li>
+  <li>
+    <p><strong>Examples</strong></p>
+
+    <ul>
+      <li>
+        <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># A 'normal' function signature
+</span><span class="o">&gt;&gt;&gt;</span> <span class="k">def</span> <span class="nf">incr</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">x</span> <span class="o">+</span> <span class="mi">1</span>
+<span class="o">&gt;&gt;&gt;</span>     
+<span class="c1"># The above function can be invoked in two different ways.
+</span><span class="o">&gt;&gt;&gt;</span> <span class="n">incr</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>  
+<span class="mi">2</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">incr</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<span class="mi">2</span>
+</code></pre></div>        </div>
+      </li>
+      <li>
+        <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># Convert the above function to accept 'positional-only' argument.
+# Default values for arguments can be provided.
+</span><span class="o">&gt;&gt;&gt;</span> <span class="k">def</span> <span class="nf">incr</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="o">/</span><span class="p">):</span>
+<span class="o">&gt;&gt;&gt;</span>     <span class="k">return</span> <span class="n">x</span> <span class="o">+</span> <span class="mi">1</span>
+<span class="o">&gt;&gt;&gt;</span>     
+<span class="c1"># This works.
+</span><span class="o">&gt;&gt;&gt;</span> <span class="n">incr</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<span class="mi">2</span>
+<span class="o">&gt;&gt;&gt;</span> 
+<span class="c1"># This fails with an error.
+</span><span class="o">&gt;&gt;&gt;</span> <span class="n">incr</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">Traceback</span> <span class="p">(</span><span class="n">most</span> <span class="n">recent</span> <span class="n">call</span> <span class="n">last</span><span class="p">):</span>
+  <span class="n">File</span> <span class="s">"&lt;input&gt;"</span><span class="p">,</span> <span class="n">line</span> <span class="mi">1</span><span class="p">,</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+    <span class="n">incr</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="nb">TypeError</span><span class="p">:</span> <span class="n">incr</span><span class="p">()</span> <span class="n">got</span> <span class="n">some</span> <span class="n">positional</span><span class="o">-</span><span class="n">only</span> <span class="n">arguments</span> <span class="n">passed</span> <span class="k">as</span> <span class="n">keyword</span> <span class="n">arguments</span><span class="p">:</span> <span class="s">'x'</span>
+</code></pre></div>        </div>
+      </li>
+      <li>
+        <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># Function signature allowing keyword-only argument
+</span><span class="o">&gt;&gt;&gt;</span> <span class="k">def</span> <span class="nf">to_fahrenheit</span><span class="p">(</span><span class="o">*</span><span class="p">,</span> <span class="n">celsius</span><span class="o">=</span><span class="mi">0</span><span class="p">):</span>
+<span class="o">&gt;&gt;&gt;</span>     <span class="k">return</span> <span class="mi">32</span> <span class="o">+</span> <span class="mi">9</span> <span class="o">*</span> <span class="n">celsius</span> <span class="o">/</span> <span class="mi">5</span>
+<span class="o">&gt;&gt;&gt;</span>     
+<span class="c1"># This works.
+</span><span class="o">&gt;&gt;&gt;</span> <span class="n">to_fahrenheit</span><span class="p">(</span><span class="n">celsius</span><span class="o">=</span><span class="mi">40</span><span class="p">)</span>
+<span class="mf">104.0</span>
+<span class="o">&gt;&gt;&gt;</span> 
+<span class="c1"># This won't. 
+</span><span class="o">&gt;&gt;&gt;</span> <span class="n">to_fahrenheit</span><span class="p">(</span><span class="mi">40</span><span class="p">)</span>
+  <span class="n">File</span> <span class="s">"&lt;input&gt;"</span><span class="p">,</span> <span class="n">line</span> <span class="mi">1</span><span class="p">,</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+    <span class="n">to_fahrenheit</span><span class="p">(</span><span class="mi">40</span><span class="p">)</span>
+<span class="nb">TypeError</span><span class="p">:</span> <span class="n">to_fahrenheit</span><span class="p">()</span> <span class="n">takes</span> <span class="mi">0</span> <span class="n">positional</span> <span class="n">arguments</span> <span class="n">but</span> <span class="mi">1</span> <span class="n">was</span> <span class="n">given</span>
+</code></pre></div>        </div>
+      </li>
+      <li>
+        <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># Function signature showing a combination of: 
+#    positional only, general, keyword only arguments
+</span>     
+<span class="o">&gt;&gt;&gt;</span> <span class="k">def</span> <span class="nf">greet</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="o">/</span><span class="p">,</span> <span class="n">greeting</span><span class="o">=</span><span class="s">"Hi there"</span><span class="p">,</span> <span class="o">*</span><span class="p">,</span> <span class="n">time_of_day</span><span class="o">=</span><span class="s">"4:30pm"</span><span class="p">):</span>
+<span class="o">&gt;&gt;&gt;</span>    <span class="k">return</span> <span class="s">f"</span><span class="si">{</span><span class="n">greeting</span><span class="si">}</span><span class="s"> </span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s">.  It is </span><span class="si">{</span><span class="n">time_of_day</span><span class="si">}</span><span class="s"> now!"</span>
+<span class="o">&gt;&gt;&gt;</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">greet</span><span class="p">(</span><span class="s">"Shashank"</span><span class="p">,</span> <span class="n">greeting</span><span class="o">=</span><span class="s">"Hello"</span><span class="p">,</span> <span class="n">time_of_day</span><span class="o">=</span><span class="s">"8:00"</span><span class="p">)</span>
+<span class="s">'Hello Shashank.  It is 8:00 now!'</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">greet</span><span class="p">(</span><span class="s">"Shashank"</span><span class="p">)</span>
+<span class="s">'Hi there Shashank.  It is 4:30pm now!'</span>     
+</code></pre></div>        </div>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="3-advanced-f-strings--debug-specifier">3. Advanced f-strings &amp; debug specifier</h3>
+
+<ul>
+  <li>Assignment Expressions can be used inside a <code class="language-plaintext highlighter-rouge">f-string</code>
+    <ul>
+      <li>
+        <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&gt;&gt;&gt;</span> <span class="n">r</span> <span class="o">=</span> <span class="mf">3.8</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="k">print</span><span class="p">(</span><span class="s">f"Diameter </span><span class="si">{</span><span class="p">(</span><span class="n">diam</span> <span class="p">:</span><span class="o">=</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">r</span><span class="p">)</span><span class="si">}</span><span class="s"> gives circumference </span><span class="si">{</span><span class="n">math</span><span class="p">.</span><span class="n">pi</span> <span class="o">*</span> <span class="n">diam</span><span class="p">:.</span><span class="mi">2</span><span class="n">f</span><span class="si">}</span><span class="s">"</span><span class="p">)</span>
+</code></pre></div>        </div>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <p>Specifier <code class="language-plaintext highlighter-rouge">=</code> enables self-documenting output</p>
+
+    <ul>
+      <li>
+        <p>Prints the name of the variable in along with its value.</p>
+      </li>
+      <li>
+        <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># Here is how it works.
+</span><span class="o">&gt;&gt;&gt;</span> <span class="n">x</span> <span class="o">=</span> <span class="mi">100</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="k">print</span><span class="p">(</span><span class="s">f"</span><span class="si">{</span><span class="n">x</span><span class="o">=</span><span class="si">}</span><span class="s">)
+'x=100'
+</span></code></pre></div>        </div>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="4-improvements-to-modules">4. Improvements to modules</h3>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">asyncio.run()</code> graduates to a stable API from a provisional one.</li>
+  <li><code class="language-plaintext highlighter-rouge">math</code> gets new functions: <a href="https://docs.python.org/3/library/math.html#math.prod"><code class="language-plaintext highlighter-rouge">prod()</code></a>, <a href="https://docs.python.org/3/library/math.html#math.isqrt"><code class="language-plaintext highlighter-rouge">isqrt()</code></a>, <a href="https://docs.python.org/3/library/math.html#math.dist"><code class="language-plaintext highlighter-rouge">dist()</code></a> <a href="https://docs.python.org/3/library/math.html#math.perm"><code class="language-plaintext highlighter-rouge">perm()</code></a>, <a href="https://docs.python.org/3/library/math.html#math.comb"><code class="language-plaintext highlighter-rouge">comb()</code></a></li>
+  <li><code class="language-plaintext highlighter-rouge">statistics</code> gets fortified with new functions: <a href="https://docs.python.org/3/library/statistics.html#statistics.fmean"><code class="language-plaintext highlighter-rouge">fmean()</code></a>, <a href="https://docs.python.org/3/library/statistics.html#statistics.geometric_mean"><code class="language-plaintext highlighter-rouge">geometric_mean()</code></a>, <a href="https://docs.python.org/3/library/statistics.html#statistics.multimode"><code class="language-plaintext highlighter-rouge">multimode()</code></a>, <a href="https://docs.python.org/3/library/statistics.html#statistics.quantiles"><code class="language-plaintext highlighter-rouge">quantiles()</code></a>, <a href="https://docs.python.org/3/library/statistics.html#statistics.NormalDist"><code class="language-plaintext highlighter-rouge">NormalDist()</code></a></li>
+  <li>And several others…</li>
+</ul>
+
+<h3 id="5-a-new-module-importlibmetadata">5. A new module: <code class="language-plaintext highlighter-rouge">importlib.metadata</code></h3>
+
+<p>Helps with inspection of a package, its metadata, files, requirements, so on.</p>
+
+<ul>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">metadata.version('package')</code></p>
+
+    <ul>
+      <li>
+        <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&gt;&gt;&gt;</span> <span class="kn">from</span> <span class="nn">importlib</span> <span class="kn">import</span> <span class="n">metadata</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">metadata</span><span class="p">.</span><span class="n">version</span><span class="p">(</span><span class="s">"bpython"</span><span class="p">)</span>
+<span class="s">'0.21'</span>
+</code></pre></div>        </div>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">metadata.metadata('package')</code></p>
+
+    <ul>
+      <li>
+        <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&gt;&gt;&gt;</span> <span class="kn">from</span> <span class="nn">pprint</span> <span class="kn">import</span> <span class="n">pprint</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">pprint</span><span class="p">(</span><span class="nb">dict</span><span class="p">(</span><span class="n">metadata</span><span class="p">.</span><span class="n">metadata</span><span class="p">(</span><span class="s">"bpython"</span><span class="p">)))</span>
+<span class="p">{</span><span class="s">'Author'</span><span class="p">:</span> <span class="s">'Bob Farrell, Andreas Stuehrk, Sebastian Ramacher, Thomas '</span>
+           <span class="s">'Ballinger, et al.'</span><span class="p">,</span>
+ <span class="s">'Author-email'</span><span class="p">:</span> <span class="s">'robertanthonyfarrell@gmail.com'</span><span class="p">,</span>
+ <span class="s">'Classifier'</span><span class="p">:</span> <span class="s">'Programming Language :: Python :: 3'</span><span class="p">,</span>
+ <span class="s">'Home-page'</span><span class="p">:</span> <span class="s">'https://www.bpython-interpreter.org/'</span><span class="p">,</span>
+ <span class="s">'License'</span><span class="p">:</span> <span class="s">'MIT/X'</span><span class="p">,</span>
+ <span class="s">'Metadata-Version'</span><span class="p">:</span> <span class="s">'2.1'</span><span class="p">,</span>
+ <span class="s">'Name'</span><span class="p">:</span> <span class="s">'bpython'</span><span class="p">,</span>
+ <span class="s">'Platform'</span><span class="p">:</span> <span class="s">'UNKNOWN'</span><span class="p">,</span>
+ <span class="s">'Provides-Extra'</span><span class="p">:</span> <span class="s">'jedi'</span><span class="p">,</span>
+ <span class="s">'Requires-Dist'</span><span class="p">:</span> <span class="s">'pygments'</span><span class="p">,</span>
+ <span class="s">'Requires-Python'</span><span class="p">:</span> <span class="s">'&gt;=3.6'</span><span class="p">,</span>
+ <span class="s">'Summary'</span><span class="p">:</span> <span class="s">'Fancy Interface to the Python Interpreter'</span><span class="p">,</span>
+ <span class="s">'Version'</span><span class="p">:</span> <span class="s">'0.21'</span><span class="p">}</span>
+</code></pre></div>        </div>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">metadata.files('package')</code>=&gt; returns list of <code class="language-plaintext highlighter-rouge">Path()</code> objects</p>
+
+    <ul>
+      <li>
+        <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&gt;&gt;&gt;</span> <span class="nb">len</span><span class="p">(</span><span class="n">metadata</span><span class="p">.</span><span class="n">files</span><span class="p">(</span><span class="s">"bpython"</span><span class="p">))</span>
+<span class="mi">153</span>
+</code></pre></div>        </div>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">metadata.requires('package')</code></p>
+
+    <ul>
+      <li>
+        <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&gt;&gt;&gt;</span> <span class="n">pprint</span><span class="p">(</span><span class="n">metadata</span><span class="p">.</span><span class="n">requires</span><span class="p">(</span><span class="s">"bpython"</span><span class="p">))</span>
+<span class="p">[</span><span class="s">'pygments'</span><span class="p">,</span>
+ <span class="s">'requests'</span><span class="p">,</span>
+ <span class="s">'curtsies (&gt;=0.3.5)'</span><span class="p">,</span>
+ <span class="s">'greenlet'</span><span class="p">,</span>
+ <span class="s">'cwcwidth'</span><span class="p">,</span>
+ <span class="s">'pyxdg'</span><span class="p">,</span>
+ <span class="s">"jedi (&gt;=0.16) ; extra == 'jedi'"</span><span class="p">,</span>
+ <span class="s">"urwid ; extra == 'urwid'"</span><span class="p">,</span>
+ <span class="s">"watchdog ; extra == 'watch'"</span><span class="p">]</span>
+</code></pre></div>        </div>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="6-syntaxwarning-over-dubious-looking-code">6. <code class="language-plaintext highlighter-rouge">SyntaxWarning</code> over dubious looking code</h3>
+
+<ul>
+  <li>
+    <p>The difference between <code class="language-plaintext highlighter-rouge">is</code> and <code class="language-plaintext highlighter-rouge">==</code> can be confusing. The latter checks for equal values, while <code class="language-plaintext highlighter-rouge">is</code> is <code class="language-plaintext highlighter-rouge">True</code> only when objects are the same. Python 3.8 will try to warn you about cases when you should use <code class="language-plaintext highlighter-rouge">==</code> instead of <code class="language-plaintext highlighter-rouge">is</code>.</p>
+
+    <ul>
+      <li>
+        <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&gt;&gt;&gt;</span> <span class="c1"># Python 3.7
+</span><span class="o">&gt;&gt;&gt;</span> <span class="n">version</span> <span class="o">=</span> <span class="s">"3.7"</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">version</span> <span class="ow">is</span> <span class="s">"3.7"</span>
+<span class="bp">False</span>
+<span class="o">&gt;&gt;&gt;</span>     
+<span class="o">&gt;&gt;&gt;</span> <span class="c1"># Python 3.8
+</span><span class="o">&gt;&gt;&gt;</span> <span class="n">version</span> <span class="o">=</span> <span class="s">"3.8"</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">version</span> <span class="ow">is</span> <span class="s">"3.8"</span>
+<span class="o">&lt;</span><span class="n">stdin</span><span class="o">&gt;</span><span class="p">:</span><span class="mi">1</span><span class="p">:</span> <span class="nb">SyntaxWarning</span><span class="p">:</span> <span class="s">"is"</span> <span class="k">with</span> <span class="n">a</span> <span class="n">literal</span><span class="p">.</span> <span class="n">Did</span> <span class="n">you</span> <span class="n">mean</span> <span class="s">"=="</span><span class="err">?</span>
+<span class="bp">False</span>
+<span class="o">&gt;&gt;&gt;</span>     
+<span class="o">&gt;&gt;&gt;</span> <span class="n">version</span> <span class="o">==</span> <span class="s">"3.8"</span>
+<span class="bp">True</span>
+</code></pre></div>        </div>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <p>It is easy to miss a comma when you’re writing out a long list, especially when formatting it vertically. Forgetting a comma in a list of tuples will give a confusing error message about tuples not being callable. Python 3.8 additionally emits a warning that points toward the real issue.</p>
+
+    <ul>
+      <li>
+        <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&gt;&gt;&gt;</span> <span class="p">[</span>
+<span class="p">...</span>   <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+<span class="p">...</span>   <span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
+<span class="p">...</span> <span class="p">]</span>
+<span class="o">&lt;</span><span class="n">stdin</span><span class="o">&gt;</span><span class="p">:</span><span class="mi">2</span><span class="p">:</span> <span class="nb">SyntaxWarning</span><span class="p">:</span> <span class="s">'tuple'</span> <span class="nb">object</span> <span class="ow">is</span> <span class="ow">not</span> <span class="nb">callable</span><span class="p">;</span> <span class="n">perhaps</span>
+           <span class="n">you</span> <span class="n">missed</span> <span class="n">a</span> <span class="n">comma</span><span class="err">?</span>
+<span class="n">Traceback</span> <span class="p">(</span><span class="n">most</span> <span class="n">recent</span> <span class="n">call</span> <span class="n">last</span><span class="p">):</span>
+  <span class="n">File</span> <span class="s">"&lt;stdin&gt;"</span><span class="p">,</span> <span class="n">line</span> <span class="mi">2</span><span class="p">,</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="nb">TypeError</span><span class="p">:</span> <span class="s">'tuple'</span> <span class="nb">object</span> <span class="ow">is</span> <span class="ow">not</span> <span class="nb">callable</span>
+</code></pre></div>        </div>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="7-optimizations">7. Optimizations</h3>
+
+<p>As with every new point release, Python offers several runtime improvements with 3.8 as well.  The salient ones are:</p>
+
+<ul>
+  <li>faster file copying with <code class="language-plaintext highlighter-rouge">shutil</code> functions</li>
+  <li>faster lookup of fields in <code class="language-plaintext highlighter-rouge">namedtuple</code> objects</li>
+  <li>faster <code class="language-plaintext highlighter-rouge">operator.itemgetter</code> operations</li>
+  <li>reduced memory footprint for lists, dictionaries</li>
+  <li>improved default performance in <code class="language-plaintext highlighter-rouge">pickle</code> (enabled by pickle protocol 5; see <a href="https://www.python.org/dev/peps/pep-0574">PEP 574</a>)</li>
+</ul>
+
+<p>The comprehensive list of improvements is available at <a href="https://docs.python.org/3.8/whatsnew/3.8.html#optimizations">Python Official Website</a>.</p>
+
+<h3 id="8-more-precise-type-hinting-support">8. More Precise Type Hinting Support</h3>
+
+<p>Type hinting is a formal solution to statically indicate the type of a variable within Python code.</p>
+
+<p>As far as TPM is concerned, type hinting is not yet used.</p>
+
+<p>Nevertheless, type hinting makes for an important subject.  <a href="https://realpython.com/python-data-classes/"><code class="language-plaintext highlighter-rouge">Dataclasses</code></a> in Python Standard Library are built over type hinting.  Several libraries in open source domain are taking advantage of this type hinting to build sophisticated capabilities (e.g., accurate <a href="https://realpython.com/python-type-checking/#pros-and-cons">code auto-completion in IDEs</a> to improve developer productivity), and tools (data validation libraries e.g., <a href="https://betterprogramming.pub/the-beginners-guide-to-pydantic-ba33b26cde89"><code class="language-plaintext highlighter-rouge">Pydantic</code></a>).  Notable examples include: <a href="https://realpython.com/fastapi-python-web-apis/"><code class="language-plaintext highlighter-rouge">FastAPI</code></a> - a highly scalable web application development framework; <a href="https://typer.tiangolo.com/tutorial/"><code class="language-plaintext highlighter-rouge">Typer</code></a> - a modern command line application development framework.</p>
+
+<p><a href="https://www.python.org/dev/peps/pep-0484/">PEP 484</a> specifies Python’s type hinting.  Python 3.5 introduced language-level support for type hinting.</p>
+
+<p>Please see <a href="https://realpython.com/python-type-checking/">this article</a> to get started with python type hints.</p>
+
+<p><a href="https://docs.python.org/3/whatsnew/3.8.html#typing">Python 3.8</a> expands type hinting support to offer more precision, by adding support for the following:</p>
+
+<ul>
+  <li>Literal Types through <a href="https://www.python.org/dev/peps/pep-0586">PEP 586</a></li>
+  <li>Typed Dictionaries through <a href="https://www.python.org/dev/peps/pep-0589">PEP 589</a></li>
+  <li>Final Objects through <a href="https://www.python.org/dev/peps/pep-0591">PEP 591</a></li>
+  <li>Protocol Definitions through <a href="https://www.python.org/dev/peps/pep-0544">PEP 544</a></li>
+</ul>
