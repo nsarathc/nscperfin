@@ -1,3 +1,11 @@
+---
+toc: true
+layout: post
+description: New Features in Python 3.8
+categories: [markdown]
+title: New Features in Python 3.8
+---
+
 # New Features in Python 3.8
 
 ## Introduction
@@ -214,9 +222,8 @@ The comprehensive list of improvements is available at [Python Official Website]
 
 Type hinting is a formal solution to statically indicate the type of a variable within Python code.  
 
-As far as TPM is concerned, type hinting is not yet used.
 
-Nevertheless, type hinting makes for an important subject.  [`Dataclasses`](https://realpython.com/python-data-classes/) in Python Standard Library are built over type hinting.  Several libraries in open source domain are taking advantage of this type hinting to build sophisticated capabilities (e.g., accurate [code auto-completion in IDEs](https://realpython.com/python-type-checking/#pros-and-cons) to improve developer productivity), and tools (data validation libraries e.g., [`Pydantic`](https://betterprogramming.pub/the-beginners-guide-to-pydantic-ba33b26cde89)).  Notable examples include: [`FastAPI`](https://realpython.com/fastapi-python-web-apis/) - a highly scalable web application development framework; [`Typer`](https://typer.tiangolo.com/tutorial/) - a modern command line application development framework.
+Type hinting makes for an important subject.  [`Dataclasses`](https://realpython.com/python-data-classes/) in Python Standard Library are built over type hinting.  Several libraries in open source domain are taking advantage of this type hinting to build sophisticated capabilities (e.g., accurate [code auto-completion in IDEs](https://realpython.com/python-type-checking/#pros-and-cons) to improve developer productivity), and tools (data validation libraries e.g., [`Pydantic`](https://betterprogramming.pub/the-beginners-guide-to-pydantic-ba33b26cde89)).  Notable examples include: [`FastAPI`](https://realpython.com/fastapi-python-web-apis/) - a highly scalable web application development framework; [`Typer`](https://typer.tiangolo.com/tutorial/) - a modern command line application development framework.
 
 [PEP 484](https://www.python.org/dev/peps/pep-0484/) specifies Python's type hinting.  Python 3.5 introduced language-level support for type hinting.  
 
