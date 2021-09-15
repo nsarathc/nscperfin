@@ -4,15 +4,19 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="twitter:card" content="summary_large_image" /><!-- Begin Jekyll SEO tag v2.6.1 -->
-<title>Tags | Software Development, Useful Stuff, and Findings</title>
+<title>Python: Command Line Application, parameter specification, add_mutually_exclusive_group | Software Development, Useful Stuff, and Findings</title>
 <meta name="generator" content="Jekyll v4.1.1" />
-<meta property="og:title" content="Tags" />
+<meta property="og:title" content="Python: Command Line Application, parameter specification, add_mutually_exclusive_group" />
 <meta property="og:locale" content="en_US" />
-<link rel="canonical" href="https://nsarathc.github.io/nscperfin/categories/" />
-<meta property="og:url" content="https://nsarathc.github.io/nscperfin/categories/" />
+<meta name="description" content="Outlines how to render one of 3 arguments mandatory using argparse" />
+<meta property="og:description" content="Outlines how to render one of 3 arguments mandatory using argparse" />
+<link rel="canonical" href="https://nsarathc.github.io/nscperfin/python/commandlineapps/2021/09/16/argparse-mutually-exclusive-groups.html" />
+<meta property="og:url" content="https://nsarathc.github.io/nscperfin/python/commandlineapps/2021/09/16/argparse-mutually-exclusive-groups.html" />
 <meta property="og:site_name" content="Software Development, Useful Stuff, and Findings" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2021-09-16T00:00:00-05:00" />
 <script type="application/ld+json">
-{"url":"https://nsarathc.github.io/nscperfin/categories/","@type":"WebPage","headline":"Tags","@context":"https://schema.org"}</script>
+{"datePublished":"2021-09-16T00:00:00-05:00","url":"https://nsarathc.github.io/nscperfin/python/commandlineapps/2021/09/16/argparse-mutually-exclusive-groups.html","@type":"BlogPosting","dateModified":"2021-09-16T00:00:00-05:00","mainEntityOfPage":{"@type":"WebPage","@id":"https://nsarathc.github.io/nscperfin/python/commandlineapps/2021/09/16/argparse-mutually-exclusive-groups.html"},"headline":"Python: Command Line Application, parameter specification, add_mutually_exclusive_group","description":"Outlines how to render one of 3 arguments mandatory using argparse","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="stylesheet" href="/nscperfin/assets/css/style.css"><link type="application/atom+xml" rel="alternate" href="https://nsarathc.github.io/nscperfin/feed.xml" title="Software Development, Useful Stuff, and Findings" /><link rel="shortcut icon" type="image/x-icon" href="/nscperfin/images/favicon.ico"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Primer/15.2.0/primer.css" integrity="sha512-xTz2ys4coGAOz8vuV1NcQBkgVmKhsSEtjbqyMJbBHRplFuvKIUo6xhLHpAyPt9mfR6twHJgn9OgVLuqOvjeBhg==" crossorigin="anonymous" />
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />
@@ -64,99 +68,41 @@ window.onload = wrap_img;
 </header>
 <main class="page-content" aria-label="Content">
       <div class="wrapper">
-        <div class="home">
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
 
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">Python: Command Line Application, parameter specification, add_mutually_exclusive_group</h1><p class="page-description">Outlines how to render one of 3 arguments mandatory using argparse</p><p class="post-meta post-meta-title"><time class="dt-published" datetime="2021-09-16T00:00:00-05:00" itemprop="datePublished">
+        Sep 16, 2021
+      </time>
+       • <span class="read-time" title="Estimated read time">
+    
+    
+      1 min read
+    
+</span></p>
 
-<h2>Contents</h2>
+    
+      <p class="category-tags"><i class="fas fa-tags category-tags-icon"></i></i> 
+      
+        <a class="category-tags-link" href="/nscperfin/categories/#python">python</a>
+        &nbsp;
+      
+        <a class="category-tags-link" href="/nscperfin/categories/#CommandLineApps">CommandLineApps</a>
+        
+      
+      </p>
+    
 
-  
-  
-  
+    </header>
 
-  <ul>
-  
-    <li><a href="#ChainedComparisons">ChainedComparisons</a></li>
-  
-    <li><a href="#collections">collections</a></li>
-  
-    <li><a href="#CommandLineApps">CommandLineApps</a></li>
-  
-    <li><a href="#python">python</a></li>
-  
-  </ul>
-
-  
-      <h3 id ="ChainedComparisons"><i class="fas fa-tags category-tags-icon"></i></i> ChainedComparisons</h3>
-      <a name="ChainedComparisons"></a>
-      
-        <article class="archive-item">
-          <p class="post-meta post-meta-title"><a class="page-meta" href="/nscperfin/python/chainedcomparisons/2021/09/15/chainedcomparison-for-range-validation.html">Clean Coding: Chained Comparisons as a Range Validation Tool</a>  • Sep 15, 2021</p>
-        </article>
-        
-      
-  
-      <h3 id ="collections"><i class="fas fa-tags category-tags-icon"></i></i> collections</h3>
-      <a name="collections"></a>
-      
-        <article class="archive-item">
-          <p class="post-meta post-meta-title"><a class="page-meta" href="/nscperfin/python/collections/2021/09/16/python-list-methods.html">Python: Lists</a>  • Sep 16, 2021</p>
-        </article>
-        
-      
-  
-      <h3 id ="CommandLineApps"><i class="fas fa-tags category-tags-icon"></i></i> CommandLineApps</h3>
-      <a name="CommandLineApps"></a>
-      
-        <article class="archive-item">
-          <p class="post-meta post-meta-title"><a class="page-meta" href="/nscperfin/python/commandlineapps/2021/09/16/argparse-mutually-exclusive-groups.html">Python: Command Line Application, parameter specification, add_mutually_exclusive_group</a>  • Sep 16, 2021</p>
-        </article>
-        
-      
-  
-      <h3 id ="python"><i class="fas fa-tags category-tags-icon"></i></i> python</h3>
-      <a name="python"></a>
-      
-        <article class="archive-item">
-          <p class="post-meta post-meta-title"><a class="page-meta" href="/nscperfin/python/collections/2021/09/16/python-list-methods.html">Python: Lists</a>  • Sep 16, 2021</p>
-        </article>
-        
-      
-        <article class="archive-item">
-          <p class="post-meta post-meta-title"><a class="page-meta" href="/nscperfin/python/commandlineapps/2021/09/16/argparse-mutually-exclusive-groups.html">Python: Command Line Application, parameter specification, add_mutually_exclusive_group</a>  • Sep 16, 2021</p>
-        </article>
-        
-      
-        <article class="archive-item">
-          <p class="post-meta post-meta-title"><a class="page-meta" href="/nscperfin/python/2021/09/15/pipdeptree.html">pipdeptree: Python Package Dependency Tree Generator</a>  • Sep 15, 2021</p>
-        </article>
-        
-      
-        <article class="archive-item">
-          <p class="post-meta post-meta-title"><a class="page-meta" href="/nscperfin/python/2021/09/15/clean-coding-ctxmgr-move-around-folders.html">Clean Coding: Jumping in and out of a directory</a>  • Sep 15, 2021</p>
-        </article>
-        
-      
-        <article class="archive-item">
-          <p class="post-meta post-meta-title"><a class="page-meta" href="/nscperfin/python/2021/09/15/clean-coding-conventions-practice.html">Clean Coding: Conventions & Practice</a>  • Sep 15, 2021</p>
-        </article>
-        
-      
-        <article class="archive-item">
-          <p class="post-meta post-meta-title"><a class="page-meta" href="/nscperfin/python/chainedcomparisons/2021/09/15/chainedcomparison-for-range-validation.html">Clean Coding: Chained Comparisons as a Range Validation Tool</a>  • Sep 15, 2021</p>
-        </article>
-        
-      
-        <article class="archive-item">
-          <p class="post-meta post-meta-title"><a class="page-meta" href="/nscperfin/python/2021/09/14/py38_whatisnew.html">New Features in Python 3.8</a>  • Sep 14, 2021</p>
-        </article>
-        
-      
-  
-
-
-
-
+  <div class="post-content e-content" itemprop="articleBody">
+    <div class="jekyll-twitter-plugin"><blockquote class="twitter-tweet"><p lang="en" dir="ltr">How to make one of 3 arguments required using <a href="https://twitter.com/hashtag/Python?src=hash&amp;ref_src=twsrc%5Etfw">#Python</a> argparse? add_mutually_exclusive_group is your friend: <a href="https://t.co/ARCB1KzuvP">pic.twitter.com/ARCB1KzuvP</a></p>&mdash; PyBites (@pybites) <a href="https://twitter.com/pybites/status/1437321824673669123?ref_src=twsrc%5Etfw">September 13, 2021</a></blockquote>
+<script async="" src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 </div>
+
+
+  </div><a class="u-url" href="/nscperfin/python/commandlineapps/2021/09/16/argparse-mutually-exclusive-groups.html" hidden></a>
+</article>
       </div>
     </main><footer class="site-footer h-card">
   <data class="u-url" href="/nscperfin/"></data>
