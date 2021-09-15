@@ -2,8 +2,9 @@
 toc: true
 layout: post
 description: Short Notes on Python 3.8 new features
-categories: [markdown]
+categories: [python]
 title: New Features in Python 3.8
+published: true
 ---
 
 # Introduction
@@ -87,7 +88,7 @@ You are recommended to take a look at the Official Documentation with a view to 
      'Hello Shashank.  It is 8:00 now!'
      >>> greet("Shashank")
      'Hi there Shashank.  It is 4:30pm now!'     
-     ```  
+     ```
 
 ## 3. Advanced f-strings & debug specifier
 
