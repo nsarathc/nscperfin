@@ -1,28 +1,26 @@
 ---
 toc: true
 layout: post
-description: New Features in Python 3.8
+description: Short Notes on Python 3.8 new features
 categories: [markdown]
 title: New Features in Python 3.8
 ---
 
-# New Features in Python 3.8
-
-## Introduction
+# Introduction
 
 It may be noted that this document is more of an exemplified excerpt of official Python Documentation: [What’s New In Python 3.8](https://docs.python.org/3/whatsnew/3.8.html).  
 
 You are recommended to take a look at the Official Documentation with a view to take full advantage of new features of Python 3.8.
 
-## Features
+# Features
 
-### 1. Assignment Expressions (to simplify code constructs)
+## 1. Assignment Expressions (to simplify code constructs)
 
 - [Assignment Expression and Walrus Operator](https://blog.teclado.com/python-assignment-expressions/)
 - Provide for easier-looking code in certain situation (while loop conditions, efficient list/dictionary/set comprehensions)
 - Please see [Python Standard Library](https://www.python.org/dev/peps/pep-0572/#examples) for examples from Python 3.8 standard library
 
-### 2. Positional-Only & Keyword-Only Function Arguments
+## 2. Positional-Only & Keyword-Only Function Arguments
 
 - **Rules**
   
@@ -91,7 +89,7 @@ You are recommended to take a look at the Official Documentation with a view to 
      'Hi there Shashank.  It is 4:30pm now!'     
      ```  
 
-### 3. Advanced f-strings & debug specifier
+## 3. Advanced f-strings & debug specifier
 
 - Assignment Expressions can be used inside a `f-string` 
   - ```python
@@ -110,14 +108,14 @@ You are recommended to take a look at the Official Documentation with a view to 
     'x=100'
     ```
 
-### 4. Improvements to modules
+## 4. Improvements to modules
 
 - `asyncio.run()` graduates to a stable API from a provisional one.  
 - `math` gets new functions: [`prod()`](https://docs.python.org/3/library/math.html#math.prod), [`isqrt()`](https://docs.python.org/3/library/math.html#math.isqrt), [`dist()`](https://docs.python.org/3/library/math.html#math.dist) [`perm()`](https://docs.python.org/3/library/math.html#math.perm), [`comb()`](https://docs.python.org/3/library/math.html#math.comb)
 - `statistics` gets fortified with new functions: [`fmean()`](https://docs.python.org/3/library/statistics.html#statistics.fmean), [`geometric_mean()`](https://docs.python.org/3/library/statistics.html#statistics.geometric_mean), [`multimode()`](https://docs.python.org/3/library/statistics.html#statistics.multimode), [`quantiles()`](https://docs.python.org/3/library/statistics.html#statistics.quantiles), [`NormalDist()`](https://docs.python.org/3/library/statistics.html#statistics.NormalDist)
 - And several others...
 
-### 5. A new module: `importlib.metadata`
+## 5. A new module: `importlib.metadata`
 
  Helps with inspection of a package, its metadata, files, requirements, so on. 
 
@@ -172,7 +170,7 @@ You are recommended to take a look at the Official Documentation with a view to 
      "watchdog ; extra == 'watch'"]
     ```
 
-### 6. `SyntaxWarning` over dubious looking code
+## 6. `SyntaxWarning` over dubious looking code
 
 - The difference between `is` and `==` can be confusing. The latter checks for equal values, while `is` is `True` only when objects are the same. Python 3.8 will try to warn you about cases when you should use `==` instead of `is`.
 
@@ -206,7 +204,7 @@ You are recommended to take a look at the Official Documentation with a view to 
     TypeError: 'tuple' object is not callable
     ```
 
-### 7. Optimizations
+## 7. Optimizations
 
 As with every new point release, Python offers several runtime improvements with 3.8 as well.  The salient ones are:
 
@@ -218,7 +216,7 @@ As with every new point release, Python offers several runtime improvements with
 
 The comprehensive list of improvements is available at [Python Official Website](https://docs.python.org/3.8/whatsnew/3.8.html#optimizations).
 
-### 8. More Precise Type Hinting Support 
+## 8. More Precise Type Hinting Support 
 
 Type hinting is a formal solution to statically indicate the type of a variable within Python code.  
 
