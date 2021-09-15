@@ -5,6 +5,7 @@ description: Command line utility for displaying the installed python packages i
 categories: [python]
 title: "pipdeptree: Python Package Dependency Tree Generator"
 published: true
+comments: true
 ---
 {% twitter https://twitter.com/pybites/status/1437691780766572546?s=20 %}
 

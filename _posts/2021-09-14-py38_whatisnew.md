@@ -5,6 +5,7 @@ description: Short Notes on Python 3.8 new features
 categories: [python]
 title: New Features in Python 3.8
 published: true
+comments: true
 ---
 
 # Introduction
