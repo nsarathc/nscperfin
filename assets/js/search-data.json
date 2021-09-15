@@ -2,7 +2,7 @@
   
     
         "post0": {
-            "title": "pipdeptree - Python Package Dependency Tree Generator",
+            "title": "pipdeptree: Python Package Dependency Tree Generator",
             "content": "Pipdeptree is a nice tool to easily see what dependencies depend on each otherhttps://t.co/0eg6LRaYDN pic.twitter.com/eFmpl8j1jJ . &mdash; PyBites (@pybites) September 14, 2021 Please refer pypi page for installation instructions and additional examples. .",
             "url": "https://nsarathc.github.io/nscperfin/python/2021/09/15/pipdeptree.html",
             "relUrl": "/python/2021/09/15/pipdeptree.html",
@@ -13,7 +13,7 @@
   
     
         ,"post1": {
-            "title": "Clean Coding: Conventions & Practice",
+            "title": "Clean Coding: Jumping in and out of a directory",
             "content": "Found a great use case for a Python contextmanager:Jump in, then out of a directory with Python.cd &quot;your_dir&quot;do something in therecd ..Can be implemented using a syntax like:with set_dir(&quot;your_dir&quot;): do_something()This works great for automation scripts: pic.twitter.com/84bYZ9FchO . &mdash; Patrick Loeber (@python_engineer) September 4, 2021",
             "url": "https://nsarathc.github.io/nscperfin/python/2021/09/15/clean-coding-ctxmgr-move-around-folders.html",
             "relUrl": "/python/2021/09/15/clean-coding-ctxmgr-move-around-folders.html",
