@@ -8,15 +8,15 @@
 <meta name="generator" content="Jekyll v4.1.1" />
 <meta property="og:title" content="New Features in Python 3.8" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="New Features in Python 3.8" />
-<meta property="og:description" content="New Features in Python 3.8" />
+<meta name="description" content="Short Notes on Python 3.8 new features" />
+<meta property="og:description" content="Short Notes on Python 3.8 new features" />
 <link rel="canonical" href="https://nsarathc.github.io/nscperfin/markdown/2021/09/14/py38_whatisnew.html" />
 <meta property="og:url" content="https://nsarathc.github.io/nscperfin/markdown/2021/09/14/py38_whatisnew.html" />
 <meta property="og:site_name" content="fastpages" />
 <meta property="og:type" content="article" />
 <meta property="article:published_time" content="2021-09-14T00:00:00-05:00" />
 <script type="application/ld+json">
-{"datePublished":"2021-09-14T00:00:00-05:00","url":"https://nsarathc.github.io/nscperfin/markdown/2021/09/14/py38_whatisnew.html","@type":"BlogPosting","headline":"New Features in Python 3.8","dateModified":"2021-09-14T00:00:00-05:00","mainEntityOfPage":{"@type":"WebPage","@id":"https://nsarathc.github.io/nscperfin/markdown/2021/09/14/py38_whatisnew.html"},"description":"New Features in Python 3.8","@context":"https://schema.org"}</script>
+{"datePublished":"2021-09-14T00:00:00-05:00","url":"https://nsarathc.github.io/nscperfin/markdown/2021/09/14/py38_whatisnew.html","@type":"BlogPosting","headline":"New Features in Python 3.8","dateModified":"2021-09-14T00:00:00-05:00","mainEntityOfPage":{"@type":"WebPage","@id":"https://nsarathc.github.io/nscperfin/markdown/2021/09/14/py38_whatisnew.html"},"description":"Short Notes on Python 3.8 new features","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="stylesheet" href="/nscperfin/assets/css/style.css"><link type="application/atom+xml" rel="alternate" href="https://nsarathc.github.io/nscperfin/feed.xml" title="fastpages" /><link rel="shortcut icon" type="image/x-icon" href="/nscperfin/images/favicon.ico"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Primer/15.2.0/primer.css" integrity="sha512-xTz2ys4coGAOz8vuV1NcQBkgVmKhsSEtjbqyMJbBHRplFuvKIUo6xhLHpAyPt9mfR6twHJgn9OgVLuqOvjeBhg==" crossorigin="anonymous" />
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />
@@ -71,7 +71,7 @@ window.onload = wrap_img;
         <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
 
   <header class="post-header">
-    <h1 class="post-title p-name" itemprop="name headline">New Features in Python 3.8</h1><p class="page-description">New Features in Python 3.8</p><p class="post-meta post-meta-title"><time class="dt-published" datetime="2021-09-14T00:00:00-05:00" itemprop="datePublished">
+    <h1 class="post-title p-name" itemprop="name headline">New Features in Python 3.8</h1><p class="page-description">Short Notes on Python 3.8 new features</p><p class="post-meta post-meta-title"><time class="dt-published" datetime="2021-09-14T00:00:00-05:00" itemprop="datePublished">
         Sep 14, 2021
       </time>
        • <span class="read-time" title="Estimated read time">
@@ -94,38 +94,31 @@ window.onload = wrap_img;
 
   <div class="post-content e-content" itemprop="articleBody">
     <ul class="section-nav">
-<li class="toc-entry toc-h1"><a href="#new-features-in-python-38">New Features in Python 3.8</a>
+<li class="toc-entry toc-h1"><a href="#introduction">Introduction</a></li>
+<li class="toc-entry toc-h1"><a href="#features">Features</a>
 <ul>
-<li class="toc-entry toc-h2"><a href="#introduction">Introduction</a></li>
-<li class="toc-entry toc-h2"><a href="#features">Features</a>
-<ul>
-<li class="toc-entry toc-h3"><a href="#1-assignment-expressions-to-simplify-code-constructs">1. Assignment Expressions (to simplify code constructs)</a></li>
-<li class="toc-entry toc-h3"><a href="#2-positional-only--keyword-only-function-arguments">2. Positional-Only &amp; Keyword-Only Function Arguments</a></li>
-<li class="toc-entry toc-h3"><a href="#3-advanced-f-strings--debug-specifier">3. Advanced f-strings &amp; debug specifier</a></li>
-<li class="toc-entry toc-h3"><a href="#4-improvements-to-modules">4. Improvements to modules</a></li>
-<li class="toc-entry toc-h3"><a href="#5-a-new-module-importlibmetadata">5. A new module: importlib.metadata</a></li>
-<li class="toc-entry toc-h3"><a href="#6-syntaxwarning-over-dubious-looking-code">6. SyntaxWarning over dubious looking code</a></li>
-<li class="toc-entry toc-h3"><a href="#7-optimizations">7. Optimizations</a></li>
-<li class="toc-entry toc-h3"><a href="#8-more-precise-type-hinting-support">8. More Precise Type Hinting Support</a></li>
+<li class="toc-entry toc-h2"><a href="#1-assignment-expressions-to-simplify-code-constructs">1. Assignment Expressions (to simplify code constructs)</a></li>
+<li class="toc-entry toc-h2"><a href="#2-positional-only--keyword-only-function-arguments">2. Positional-Only &amp; Keyword-Only Function Arguments</a></li>
+<li class="toc-entry toc-h2"><a href="#3-advanced-f-strings--debug-specifier">3. Advanced f-strings &amp; debug specifier</a></li>
+<li class="toc-entry toc-h2"><a href="#4-improvements-to-modules">4. Improvements to modules</a></li>
+<li class="toc-entry toc-h2"><a href="#5-a-new-module-importlibmetadata">5. A new module: importlib.metadata</a></li>
+<li class="toc-entry toc-h2"><a href="#6-syntaxwarning-over-dubious-looking-code">6. SyntaxWarning over dubious looking code</a></li>
+<li class="toc-entry toc-h2"><a href="#7-optimizations">7. Optimizations</a></li>
+<li class="toc-entry toc-h2"><a href="#8-more-precise-type-hinting-support">8. More Precise Type Hinting Support</a></li>
 </ul>
 </li>
-</ul>
-</li>
-</ul><h1 id="new-features-in-python-38">
-<a class="anchor" href="#new-features-in-python-38" aria-hidden="true"><span class="octicon octicon-link"></span></a>New Features in Python 3.8</h1>
-
-<h2 id="introduction">
-<a class="anchor" href="#introduction" aria-hidden="true"><span class="octicon octicon-link"></span></a>Introduction</h2>
+</ul><h1 id="introduction">
+<a class="anchor" href="#introduction" aria-hidden="true"><span class="octicon octicon-link"></span></a>Introduction</h1>
 
 <p>It may be noted that this document is more of an exemplified excerpt of official Python Documentation: <a href="https://docs.python.org/3/whatsnew/3.8.html">What’s New In Python 3.8</a>.</p>
 
 <p>You are recommended to take a look at the Official Documentation with a view to take full advantage of new features of Python 3.8.</p>
 
-<h2 id="features">
-<a class="anchor" href="#features" aria-hidden="true"><span class="octicon octicon-link"></span></a>Features</h2>
+<h1 id="features">
+<a class="anchor" href="#features" aria-hidden="true"><span class="octicon octicon-link"></span></a>Features</h1>
 
-<h3 id="1-assignment-expressions-to-simplify-code-constructs">
-<a class="anchor" href="#1-assignment-expressions-to-simplify-code-constructs" aria-hidden="true"><span class="octicon octicon-link"></span></a>1. Assignment Expressions (to simplify code constructs)</h3>
+<h2 id="1-assignment-expressions-to-simplify-code-constructs">
+<a class="anchor" href="#1-assignment-expressions-to-simplify-code-constructs" aria-hidden="true"><span class="octicon octicon-link"></span></a>1. Assignment Expressions (to simplify code constructs)</h2>
 
 <ul>
   <li><a href="https://blog.teclado.com/python-assignment-expressions/">Assignment Expression and Walrus Operator</a></li>
@@ -133,8 +126,8 @@ window.onload = wrap_img;
   <li>Please see <a href="https://www.python.org/dev/peps/pep-0572/#examples">Python Standard Library</a> for examples from Python 3.8 standard library</li>
 </ul>
 
-<h3 id="2-positional-only--keyword-only-function-arguments">
-<a class="anchor" href="#2-positional-only--keyword-only-function-arguments" aria-hidden="true"><span class="octicon octicon-link"></span></a>2. Positional-Only &amp; Keyword-Only Function Arguments</h3>
+<h2 id="2-positional-only--keyword-only-function-arguments">
+<a class="anchor" href="#2-positional-only--keyword-only-function-arguments" aria-hidden="true"><span class="octicon octicon-link"></span></a>2. Positional-Only &amp; Keyword-Only Function Arguments</h2>
 
 <ul>
   <li>
@@ -219,8 +212,8 @@ window.onload = wrap_img;
   </li>
 </ul>
 
-<h3 id="3-advanced-f-strings--debug-specifier">
-<a class="anchor" href="#3-advanced-f-strings--debug-specifier" aria-hidden="true"><span class="octicon octicon-link"></span></a>3. Advanced f-strings &amp; debug specifier</h3>
+<h2 id="3-advanced-f-strings--debug-specifier">
+<a class="anchor" href="#3-advanced-f-strings--debug-specifier" aria-hidden="true"><span class="octicon octicon-link"></span></a>3. Advanced f-strings &amp; debug specifier</h2>
 
 <ul>
   <li>Assignment Expressions can be used inside a <code class="language-plaintext highlighter-rouge">f-string</code>
@@ -252,8 +245,8 @@ window.onload = wrap_img;
   </li>
 </ul>
 
-<h3 id="4-improvements-to-modules">
-<a class="anchor" href="#4-improvements-to-modules" aria-hidden="true"><span class="octicon octicon-link"></span></a>4. Improvements to modules</h3>
+<h2 id="4-improvements-to-modules">
+<a class="anchor" href="#4-improvements-to-modules" aria-hidden="true"><span class="octicon octicon-link"></span></a>4. Improvements to modules</h2>
 
 <ul>
   <li>
@@ -267,9 +260,9 @@ window.onload = wrap_img;
   <li>And several others…</li>
 </ul>
 
-<h3 id="5-a-new-module-importlibmetadata">
+<h2 id="5-a-new-module-importlibmetadata">
 <a class="anchor" href="#5-a-new-module-importlibmetadata" aria-hidden="true"><span class="octicon octicon-link"></span></a>5. A new module: <code class="language-plaintext highlighter-rouge">importlib.metadata</code>
-</h3>
+</h2>
 
 <p>Helps with inspection of a package, its metadata, files, requirements, so on.</p>
 
@@ -347,8 +340,8 @@ window.onload = wrap_img;
   </li>
 </ul>
 
-<h3 id="6-syntaxwarning-over-dubious-looking-code">
-<a class="anchor" href="#6-syntaxwarning-over-dubious-looking-code" aria-hidden="true"><span class="octicon octicon-link"></span></a>6. <code class="language-plaintext highlighter-rouge">SyntaxWarning</code> over dubious looking code</h3>
+<h2 id="6-syntaxwarning-over-dubious-looking-code">
+<a class="anchor" href="#6-syntaxwarning-over-dubious-looking-code" aria-hidden="true"><span class="octicon octicon-link"></span></a>6. <code class="language-plaintext highlighter-rouge">SyntaxWarning</code> over dubious looking code</h2>
 
 <ul>
   <li>
@@ -395,8 +388,8 @@ window.onload = wrap_img;
   </li>
 </ul>
 
-<h3 id="7-optimizations">
-<a class="anchor" href="#7-optimizations" aria-hidden="true"><span class="octicon octicon-link"></span></a>7. Optimizations</h3>
+<h2 id="7-optimizations">
+<a class="anchor" href="#7-optimizations" aria-hidden="true"><span class="octicon octicon-link"></span></a>7. Optimizations</h2>
 
 <p>As with every new point release, Python offers several runtime improvements with 3.8 as well.  The salient ones are:</p>
 
@@ -410,8 +403,8 @@ window.onload = wrap_img;
 
 <p>The comprehensive list of improvements is available at <a href="https://docs.python.org/3.8/whatsnew/3.8.html#optimizations">Python Official Website</a>.</p>
 
-<h3 id="8-more-precise-type-hinting-support">
-<a class="anchor" href="#8-more-precise-type-hinting-support" aria-hidden="true"><span class="octicon octicon-link"></span></a>8. More Precise Type Hinting Support</h3>
+<h2 id="8-more-precise-type-hinting-support">
+<a class="anchor" href="#8-more-precise-type-hinting-support" aria-hidden="true"><span class="octicon octicon-link"></span></a>8. More Precise Type Hinting Support</h2>
 
 <p>Type hinting is a formal solution to statically indicate the type of a variable within Python code.</p>
 
