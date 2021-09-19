@@ -2,7 +2,7 @@
 toc: false
 layout: post
 description: A real life example of how to create, handle, and log exceptions effectively in Python.
-categories: [python, exception_handling]
+categories: [python, exception_handling, howto]
 title: "Handling Exceptions in Python like a Pro"
 published: true
 comments: true
