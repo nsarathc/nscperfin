@@ -4,19 +4,19 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="twitter:card" content="summary_large_image" /><!-- Begin Jekyll SEO tag v2.6.1 -->
-<title>How to download a file? | Software Development, Useful Stuff, and Findings</title>
+<title>Handling Exceptions in Python like a Pro | Software Development, Useful Stuff, and Findings</title>
 <meta name="generator" content="Jekyll v4.1.1" />
-<meta property="og:title" content="How to download a file?" />
+<meta property="og:title" content="Handling Exceptions in Python like a Pro" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="With a 3 line of code, that is!" />
-<meta property="og:description" content="With a 3 line of code, that is!" />
-<link rel="canonical" href="https://nsarathc.github.io/nscperfin/python/howto/2021/09/19/download-a-file.html" />
-<meta property="og:url" content="https://nsarathc.github.io/nscperfin/python/howto/2021/09/19/download-a-file.html" />
+<meta name="description" content="A real life example of how to create, handle, and log exceptions effectively in Python." />
+<meta property="og:description" content="A real life example of how to create, handle, and log exceptions effectively in Python." />
+<link rel="canonical" href="https://nsarathc.github.io/nscperfin/python/exception_handling/howto/2021/09/19/how-to-handle-exceptions-like-a-pro.html" />
+<meta property="og:url" content="https://nsarathc.github.io/nscperfin/python/exception_handling/howto/2021/09/19/how-to-handle-exceptions-like-a-pro.html" />
 <meta property="og:site_name" content="Software Development, Useful Stuff, and Findings" />
 <meta property="og:type" content="article" />
 <meta property="article:published_time" content="2021-09-19T00:00:00-05:00" />
 <script type="application/ld+json">
-{"datePublished":"2021-09-19T00:00:00-05:00","url":"https://nsarathc.github.io/nscperfin/python/howto/2021/09/19/download-a-file.html","@type":"BlogPosting","dateModified":"2021-09-19T00:00:00-05:00","mainEntityOfPage":{"@type":"WebPage","@id":"https://nsarathc.github.io/nscperfin/python/howto/2021/09/19/download-a-file.html"},"headline":"How to download a file?","description":"With a 3 line of code, that is!","@context":"https://schema.org"}</script>
+{"datePublished":"2021-09-19T00:00:00-05:00","url":"https://nsarathc.github.io/nscperfin/python/exception_handling/howto/2021/09/19/how-to-handle-exceptions-like-a-pro.html","@type":"BlogPosting","dateModified":"2021-09-19T00:00:00-05:00","mainEntityOfPage":{"@type":"WebPage","@id":"https://nsarathc.github.io/nscperfin/python/exception_handling/howto/2021/09/19/how-to-handle-exceptions-like-a-pro.html"},"headline":"Handling Exceptions in Python like a Pro","description":"A real life example of how to create, handle, and log exceptions effectively in Python.","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="stylesheet" href="/nscperfin/assets/css/style.css"><link type="application/atom+xml" rel="alternate" href="https://nsarathc.github.io/nscperfin/feed.xml" title="Software Development, Useful Stuff, and Findings" /><link rel="shortcut icon" type="image/x-icon" href="/nscperfin/images/favicon.ico"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Primer/15.2.0/primer.css" integrity="sha512-xTz2ys4coGAOz8vuV1NcQBkgVmKhsSEtjbqyMJbBHRplFuvKIUo6xhLHpAyPt9mfR6twHJgn9OgVLuqOvjeBhg==" crossorigin="anonymous" />
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />
@@ -71,7 +71,7 @@ window.onload = wrap_img;
         <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
 
   <header class="post-header">
-    <h1 class="post-title p-name" itemprop="name headline">How to download a file?</h1><p class="page-description">With a 3 line of code, that is!</p><p class="post-meta post-meta-title"><time class="dt-published" datetime="2021-09-19T00:00:00-05:00" itemprop="datePublished">
+    <h1 class="post-title p-name" itemprop="name headline">Handling Exceptions in Python like a Pro</h1><p class="page-description">A real life example of how to create, handle, and log exceptions effectively in Python.</p><p class="post-meta post-meta-title"><time class="dt-published" datetime="2021-09-19T00:00:00-05:00" itemprop="datePublished">
         Sep 19, 2021
       </time>
        • <span class="read-time" title="Estimated read time">
@@ -87,6 +87,9 @@ window.onload = wrap_img;
         <a class="category-tags-link" href="/nscperfin/categories/#python">python</a>
         &nbsp;
       
+        <a class="category-tags-link" href="/nscperfin/categories/#exception_handling">exception_handling</a>
+        &nbsp;
+      
         <a class="category-tags-link" href="/nscperfin/categories/#howto">howto</a>
         
       
@@ -96,7 +99,7 @@ window.onload = wrap_img;
     </header>
 
   <div class="post-content e-content" itemprop="articleBody">
-    <div class="jekyll-twitter-plugin"><blockquote class="twitter-tweet"><p lang="en" dir="ltr">In case you missed this, you can download a file with <a href="https://twitter.com/hashtag/Python?src=hash&amp;ref_src=twsrc%5Etfw">#Python</a> with 3 lines of code! <a href="https://t.co/bTlnsJTB9b">pic.twitter.com/bTlnsJTB9b</a></p>&mdash; Mike Driscoll (@driscollis) <a href="https://twitter.com/driscollis/status/1438815394744184832?ref_src=twsrc%5Etfw">September 17, 2021</a></blockquote>
+    <div class="jekyll-twitter-plugin"><blockquote class="twitter-tweet"><p lang="en" dir="ltr">I used part of my weekend to write on how <a href="https://twitter.com/hashtag/python?src=hash&amp;ref_src=twsrc%5Etfw">#python</a> exceptions should be created and handled<a href="https://t.co/m7zZ96m8E4">https://t.co/m7zZ96m8E4</a><br /><br />I&#39;m open to critics. Let me know if it sucks!</p>&mdash; Gui Latrova (@guilatrova) <a href="https://twitter.com/guilatrova/status/1394821117525774341?ref_src=twsrc%5Etfw">May 19, 2021</a></blockquote>
 <script async="" src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 </div>
 
@@ -109,7 +112,7 @@ window.onload = wrap_img;
         theme="github-light"
         crossorigin="anonymous"
         async>
-</script><a class="u-url" href="/nscperfin/python/howto/2021/09/19/download-a-file.html" hidden></a>
+</script><a class="u-url" href="/nscperfin/python/exception_handling/howto/2021/09/19/how-to-handle-exceptions-like-a-pro.html" hidden></a>
 </article>
       </div>
     </main><footer class="site-footer h-card">

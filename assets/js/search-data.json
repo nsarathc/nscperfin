@@ -2,7 +2,18 @@
   
     
         "post0": {
-            "title": "How to find the most common element in a list?",
+            "title": "Handling Exceptions in Python like a Pro",
+            "content": "I used part of my weekend to write on how #python exceptions should be created and handledhttps://t.co/m7zZ96m8E4I&#39;m open to critics. Let me know if it sucks! . &mdash; Gui Latrova (@guilatrova) May 19, 2021",
+            "url": "https://nsarathc.github.io/nscperfin/python/exception_handling/howto/2021/09/19/how-to-handle-exceptions-like-a-pro.html",
+            "relUrl": "/python/exception_handling/howto/2021/09/19/how-to-handle-exceptions-like-a-pro.html",
+            "date": " • Sep 19, 2021"
+        }
+        
+    
+  
+    
+        ,"post1": {
+            "title": "How do I find the most common element in a list?",
             "content": "Here are two different ways to find the most common number in a #Python list: pic.twitter.com/BshralVMUh . &mdash; Mike Driscoll (@driscollis) September 17, 2021",
             "url": "https://nsarathc.github.io/nscperfin/python/howto/2021/09/19/how-to-find-most-common-element-in-list.html",
             "relUrl": "/python/howto/2021/09/19/how-to-find-most-common-element-in-list.html",
@@ -12,22 +23,11 @@
     
   
     
-        ,"post1": {
-            "title": "Handling Exceptions in Python like a Pro",
-            "content": "I used part of my weekend to write on how #python exceptions should be created and handledhttps://t.co/m7zZ96m8E4I&#39;m open to critics. Let me know if it sucks! . &mdash; Gui Latrova (@guilatrova) May 19, 2021",
-            "url": "https://nsarathc.github.io/nscperfin/python/exception_handling/2021/09/19/handle-exceptions-like-a-pro.html",
-            "relUrl": "/python/exception_handling/2021/09/19/handle-exceptions-like-a-pro.html",
-            "date": " • Sep 19, 2021"
-        }
-        
-    
-  
-    
         ,"post2": {
-            "title": "How to download a file?",
+            "title": "How do I download a file using python?",
             "content": "In case you missed this, you can download a file with #Python with 3 lines of code! pic.twitter.com/bTlnsJTB9b . &mdash; Mike Driscoll (@driscollis) September 17, 2021",
-            "url": "https://nsarathc.github.io/nscperfin/python/howto/2021/09/19/download-a-file.html",
-            "relUrl": "/python/howto/2021/09/19/download-a-file.html",
+            "url": "https://nsarathc.github.io/nscperfin/python/howto/2021/09/19/how-to-download-a-file.html",
+            "relUrl": "/python/howto/2021/09/19/how-to-download-a-file.html",
             "date": " • Sep 19, 2021"
         }
         
