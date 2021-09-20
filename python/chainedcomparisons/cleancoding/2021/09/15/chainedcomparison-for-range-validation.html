@@ -4,19 +4,19 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="twitter:card" content="summary_large_image" /><!-- Begin Jekyll SEO tag v2.6.1 -->
-<title>Clean Coding: Use HTTPStatus from http (Python Standard Library) | Software Development, Useful Stuff, and Findings</title>
+<title>Clean Coding: Chained Comparisons as a Range Validation Tool | Software Development, Useful Stuff, and Findings</title>
 <meta name="generator" content="Jekyll v4.1.1" />
-<meta property="og:title" content="Clean Coding: Use HTTPStatus from http (Python Standard Library)" />
+<meta property="og:title" content="Clean Coding: Chained Comparisons as a Range Validation Tool" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="Do not use magic numbers to represent HTTP statuses. The standard library has necessary constants built-in." />
-<meta property="og:description" content="Do not use magic numbers to represent HTTP statuses. The standard library has necessary constants built-in." />
-<link rel="canonical" href="https://nsarathc.github.io/nscperfin/python/2021/09/18/clean-coding-use-httpstatus.html" />
-<meta property="og:url" content="https://nsarathc.github.io/nscperfin/python/2021/09/18/clean-coding-use-httpstatus.html" />
+<meta name="description" content="Chained Comparisons offer a clean way to build range validators." />
+<meta property="og:description" content="Chained Comparisons offer a clean way to build range validators." />
+<link rel="canonical" href="https://nsarathc.github.io/nscperfin/python/chainedcomparisons/cleancoding/2021/09/15/chainedcomparison-for-range-validation.html" />
+<meta property="og:url" content="https://nsarathc.github.io/nscperfin/python/chainedcomparisons/cleancoding/2021/09/15/chainedcomparison-for-range-validation.html" />
 <meta property="og:site_name" content="Software Development, Useful Stuff, and Findings" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2021-09-18T00:00:00-05:00" />
+<meta property="article:published_time" content="2021-09-15T00:00:00-05:00" />
 <script type="application/ld+json">
-{"datePublished":"2021-09-18T00:00:00-05:00","url":"https://nsarathc.github.io/nscperfin/python/2021/09/18/clean-coding-use-httpstatus.html","@type":"BlogPosting","dateModified":"2021-09-18T00:00:00-05:00","mainEntityOfPage":{"@type":"WebPage","@id":"https://nsarathc.github.io/nscperfin/python/2021/09/18/clean-coding-use-httpstatus.html"},"headline":"Clean Coding: Use HTTPStatus from http (Python Standard Library)","description":"Do not use magic numbers to represent HTTP statuses. The standard library has necessary constants built-in.","@context":"https://schema.org"}</script>
+{"datePublished":"2021-09-15T00:00:00-05:00","url":"https://nsarathc.github.io/nscperfin/python/chainedcomparisons/cleancoding/2021/09/15/chainedcomparison-for-range-validation.html","@type":"BlogPosting","dateModified":"2021-09-15T00:00:00-05:00","mainEntityOfPage":{"@type":"WebPage","@id":"https://nsarathc.github.io/nscperfin/python/chainedcomparisons/cleancoding/2021/09/15/chainedcomparison-for-range-validation.html"},"headline":"Clean Coding: Chained Comparisons as a Range Validation Tool","description":"Chained Comparisons offer a clean way to build range validators.","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="stylesheet" href="/nscperfin/assets/css/style.css"><link type="application/atom+xml" rel="alternate" href="https://nsarathc.github.io/nscperfin/feed.xml" title="Software Development, Useful Stuff, and Findings" /><link rel="shortcut icon" type="image/x-icon" href="/nscperfin/images/favicon.ico"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Primer/15.2.0/primer.css" integrity="sha512-xTz2ys4coGAOz8vuV1NcQBkgVmKhsSEtjbqyMJbBHRplFuvKIUo6xhLHpAyPt9mfR6twHJgn9OgVLuqOvjeBhg==" crossorigin="anonymous" />
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />
@@ -71,8 +71,8 @@ window.onload = wrap_img;
         <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
 
   <header class="post-header">
-    <h1 class="post-title p-name" itemprop="name headline">Clean Coding: Use HTTPStatus from http (Python Standard Library)</h1><p class="page-description">Do not use magic numbers to represent HTTP statuses.  The standard library has necessary constants built-in.</p><p class="post-meta post-meta-title"><time class="dt-published" datetime="2021-09-18T00:00:00-05:00" itemprop="datePublished">
-        Sep 18, 2021
+    <h1 class="post-title p-name" itemprop="name headline">Clean Coding: Chained Comparisons as a Range Validation Tool</h1><p class="page-description">Chained Comparisons offer a clean way to build range validators.</p><p class="post-meta post-meta-title"><time class="dt-published" datetime="2021-09-15T00:00:00-05:00" itemprop="datePublished">
+        Sep 15, 2021
       </time>
        • <span class="read-time" title="Estimated read time">
     
@@ -84,7 +84,13 @@ window.onload = wrap_img;
     
       <p class="category-tags"><i class="fas fa-tags category-tags-icon"></i></i> 
       
-        <a class="category-tags-link" href="/nscperfin/categories/#python">python</a>
+        <a class="category-tags-link" href="/nscperfin/categories/#Python">Python</a>
+        &nbsp;
+      
+        <a class="category-tags-link" href="/nscperfin/categories/#ChainedComparisons">ChainedComparisons</a>
+        &nbsp;
+      
+        <a class="category-tags-link" href="/nscperfin/categories/#CleanCoding">CleanCoding</a>
         
       
       </p>
@@ -93,7 +99,7 @@ window.onload = wrap_img;
     </header>
 
   <div class="post-content e-content" itemprop="articleBody">
-    <div class="jekyll-twitter-plugin"><blockquote class="twitter-tweet"><p lang="en" dir="ltr">Python Clean Code Tip:<br /><br />Use HTTPStatus from http (it&#39;s inside the standard library) to avoid &quot;magic&quot; numbers for statuses inside your code<br /><br />👇 <a href="https://t.co/aeRF7KvvhW">pic.twitter.com/aeRF7KvvhW</a></p>&mdash; TestDriven.io (@testdrivenio) <a href="https://twitter.com/testdrivenio/status/1439261705226240008?ref_src=twsrc%5Etfw">September 18, 2021</a></blockquote>
+    <div class="jekyll-twitter-plugin"><blockquote class="twitter-tweet"><p lang="en" dir="ltr">Python Clean Code Tip:<br /><br />Use chained comparison when you need to check whether some variable is between MIN and MAX values.<br /><br />👇 <a href="https://t.co/zq2zK2FWGz">pic.twitter.com/zq2zK2FWGz</a></p>&mdash; TestDriven.io (@testdrivenio) <a href="https://twitter.com/testdrivenio/status/1437812138190327808?ref_src=twsrc%5Etfw">September 14, 2021</a></blockquote>
 <script async="" src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 </div>
 
@@ -106,7 +112,7 @@ window.onload = wrap_img;
         theme="github-light"
         crossorigin="anonymous"
         async>
-</script><a class="u-url" href="/nscperfin/python/2021/09/18/clean-coding-use-httpstatus.html" hidden></a>
+</script><a class="u-url" href="/nscperfin/python/chainedcomparisons/cleancoding/2021/09/15/chainedcomparison-for-range-validation.html" hidden></a>
 </article>
       </div>
     </main><footer class="site-footer h-card">

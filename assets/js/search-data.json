@@ -2,10 +2,10 @@
   
     
         "post0": {
-            "title": "Handling Exceptions in Python like a Pro",
+            "title": "How do I handle Exceptions in Python like a Pro?",
             "content": "I used part of my weekend to write on how #python exceptions should be created and handledhttps://t.co/m7zZ96m8E4I&#39;m open to critics. Let me know if it sucks! . &mdash; Gui Latrova (@guilatrova) May 19, 2021",
-            "url": "https://nsarathc.github.io/nscperfin/python/exception_handling/howto/2021/09/19/how-to-handle-exceptions-like-a-pro.html",
-            "relUrl": "/python/exception_handling/howto/2021/09/19/how-to-handle-exceptions-like-a-pro.html",
+            "url": "https://nsarathc.github.io/nscperfin/python/exceptionhandling/howto/2021/09/19/how-to-handle-exceptions-like-a-pro.html",
+            "relUrl": "/python/exceptionhandling/howto/2021/09/19/how-to-handle-exceptions-like-a-pro.html",
             "date": " • Sep 19, 2021"
         }
         
@@ -48,8 +48,8 @@
         ,"post4": {
             "title": "Clean Coding: Use HTTPStatus from http (Python Standard Library)",
             "content": "Python Clean Code Tip:Use HTTPStatus from http (it&#39;s inside the standard library) to avoid &quot;magic&quot; numbers for statuses inside your code👇 pic.twitter.com/aeRF7KvvhW . &mdash; TestDriven.io (@testdrivenio) September 18, 2021",
-            "url": "https://nsarathc.github.io/nscperfin/python/2021/09/18/clean-coding-use-httpstatus.html",
-            "relUrl": "/python/2021/09/18/clean-coding-use-httpstatus.html",
+            "url": "https://nsarathc.github.io/nscperfin/python/cleancoding/2021/09/18/clean-coding-use-httpstatus.html",
+            "relUrl": "/python/cleancoding/2021/09/18/clean-coding-use-httpstatus.html",
             "date": " • Sep 18, 2021"
         }
         
@@ -103,8 +103,8 @@
         ,"post9": {
             "title": "Clean Coding: Jumping in and out of a directory",
             "content": "Found a great use case for a Python contextmanager:Jump in, then out of a directory with Python.cd &quot;your_dir&quot;do something in therecd ..Can be implemented using a syntax like:with set_dir(&quot;your_dir&quot;): do_something()This works great for automation scripts: pic.twitter.com/84bYZ9FchO . &mdash; Patrick Loeber (@python_engineer) September 4, 2021",
-            "url": "https://nsarathc.github.io/nscperfin/python/2021/09/15/clean-coding-ctxmgr-move-around-folders.html",
-            "relUrl": "/python/2021/09/15/clean-coding-ctxmgr-move-around-folders.html",
+            "url": "https://nsarathc.github.io/nscperfin/python/cleancoding/2021/09/15/clean-coding-ctxmgr-move-around-folders.html",
+            "relUrl": "/python/cleancoding/2021/09/15/clean-coding-ctxmgr-move-around-folders.html",
             "date": " • Sep 15, 2021"
         }
         
@@ -114,8 +114,8 @@
         ,"post10": {
             "title": "Clean Coding: Conventions & Practice",
             "content": "Clean Code in Python from @testdrivenio https://t.co/CvZpWFejZy . &mdash; Sarath (@nsarathc) September 13, 2021",
-            "url": "https://nsarathc.github.io/nscperfin/python/2021/09/15/clean-coding-conventions-practice.html",
-            "relUrl": "/python/2021/09/15/clean-coding-conventions-practice.html",
+            "url": "https://nsarathc.github.io/nscperfin/python/cleancoding/2021/09/15/clean-coding-conventions-practice.html",
+            "relUrl": "/python/cleancoding/2021/09/15/clean-coding-conventions-practice.html",
             "date": " • Sep 15, 2021"
         }
         
@@ -125,8 +125,8 @@
         ,"post11": {
             "title": "Clean Coding: Chained Comparisons as a Range Validation Tool",
             "content": "Python Clean Code Tip:Use chained comparison when you need to check whether some variable is between MIN and MAX values.👇 pic.twitter.com/zq2zK2FWGz . &mdash; TestDriven.io (@testdrivenio) September 14, 2021",
-            "url": "https://nsarathc.github.io/nscperfin/python/chainedcomparisons/2021/09/15/chainedcomparison-for-range-validation.html",
-            "relUrl": "/python/chainedcomparisons/2021/09/15/chainedcomparison-for-range-validation.html",
+            "url": "https://nsarathc.github.io/nscperfin/python/chainedcomparisons/cleancoding/2021/09/15/chainedcomparison-for-range-validation.html",
+            "relUrl": "/python/chainedcomparisons/cleancoding/2021/09/15/chainedcomparison-for-range-validation.html",
             "date": " • Sep 15, 2021"
         }
         
