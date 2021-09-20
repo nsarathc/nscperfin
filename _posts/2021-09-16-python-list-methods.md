@@ -2,7 +2,7 @@
 toc: false
 layout: post
 description: Learn the incredibly helpful python list methods in under 5 minutes!
-categories: [python, collections]
+categories: [Python, Collections]
 title: "Python: Lists"
 published: true
 comments: true

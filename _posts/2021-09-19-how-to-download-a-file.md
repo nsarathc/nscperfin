@@ -2,7 +2,7 @@
 toc: false
 layout: post
 description: With a 3 line of code, that is!
-categories: [python, howto]
+categories: [Python,HowTo]
 title: "How do I download a file using python?"
 published: true
 comments: true

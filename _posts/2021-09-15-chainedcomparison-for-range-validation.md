@@ -2,7 +2,7 @@
 toc: false
 layout: post
 description: Chained Comparisons offer a clean way to build range validators.
-categories: [python,ChainedComparisons]
+categories: [Python,ChainedComparisons,CleanCoding]
 title: "Clean Coding: Chained Comparisons as a Range Validation Tool"
 published: true
 comments: true

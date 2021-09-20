@@ -2,7 +2,7 @@
 toc: false
 layout: post
 description: Clean Coding Suggestions & Conventions in Python.
-categories: [python]
+categories: [Python,CleanCoding]
 title: "Clean Coding: Conventions & Practice"
 published: true
 comments: true

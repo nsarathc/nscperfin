@@ -2,7 +2,7 @@
 toc: false
 layout: post
 description: Command line utility for displaying the installed python packages in form of a dependency tree.
-categories: [python]
+categories: [Python]
 title: "pipdeptree: Python Package Dependency Tree Generator"
 published: true
 comments: true

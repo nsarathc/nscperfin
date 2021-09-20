@@ -2,7 +2,7 @@
 toc: true
 layout: post
 description: Short Notes on Python 3.8 new features
-categories: [python]
+categories: [Python]
 title: New Features in Python 3.8
 published: true
 comments: true

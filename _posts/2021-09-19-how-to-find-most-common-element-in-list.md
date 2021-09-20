@@ -2,7 +2,7 @@
 toc: false
 layout: post
 description: Two different ways to find the most common number in a Python list.
-categories: [python, howto]
+categories: [Python,HowTo]
 title: "How do I find the most common element in a list?"
 published: true
 comments: true
