@@ -65,6 +65,14 @@
 <lastmod>2021-09-26T00:00:00-05:00</lastmod>
 </url>
 <url>
+<loc>https://nsarathc.github.io/nscperfin/python/cleancoding/2021/09/26/avoid-using-too-many-attributes-on-a-single-object/html</loc>
+<lastmod>2021-09-26T00:00:00-05:00</lastmod>
+</url>
+<url>
+<loc>https://nsarathc.github.io/nscperfin/python/cleancoding/2021/09/26/clean-coding-avoid-setting-attributes-outside-of-class.html</loc>
+<lastmod>2021-09-26T00:00:00-05:00</lastmod>
+</url>
+<url>
 <loc>https://nsarathc.github.io/nscperfin/python/cleancoding/2021/09/26/clean-coding-specifying-input-output-types.html</loc>
 <lastmod>2021-09-26T00:00:00-05:00</lastmod>
 </url>
@@ -100,5 +108,8 @@
 </url>
 <url>
 <loc>https://nsarathc.github.io/nscperfin/page4/</loc>
+</url>
+<url>
+<loc>https://nsarathc.github.io/nscperfin/page5/</loc>
 </url>
 </urlset>
